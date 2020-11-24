@@ -60,10 +60,14 @@ eventController.assignToUsers = (opportunityId, eventId, evento, oppOwnerId) => 
                         user: process.env.MAILER_USER,
                         pass: process.env.MAILER_PASSWORD,
                      },
+                     secure: false,
+                     tls: {
+                        ciphers: 'SSLv3'
+                     }
                   });
       
                   const mailOptions = {
-                     from: `"CSOFT MTY" <${process.env.MAILER_USER}>`, // sender address
+                     from: `"Oportunidades Comerciales" <${process.env.MAILER_USER}>`, // sender address
                      to: emailsList, // list of receivers
                      subject: "Nuevo evento para oportunidad", // Subject line
                      text: "Nuevo evento", // plain text body
