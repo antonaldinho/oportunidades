@@ -55,9 +55,7 @@ eventController.assignToUsers = (opportunityId, eventId, evento, oppOwnerId) => 
                   });
 
                   let transporter = nodemailer.createTransport({
-                     host: process.env.HOST_NAME,
-                     port: 587,
-                     secure: false,
+                     service: "hotmail",
                      auth: {
                         user: process.env.MAILER_USER,
                         pass: process.env.MAILER_PASSWORD,
