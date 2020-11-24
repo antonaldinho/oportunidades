@@ -55,12 +55,9 @@ eventController.assignToUsers = (opportunityId, eventId, evento, oppOwnerId) => 
                   });
 
                   let transporter = nodemailer.createTransport({
-                     host: "smtp-mail.outlook.com",
+                     host: process.env.HOST_NAME,
                      port: 587,
                      secure: false,
-                     tls: {
-                        ciphers: "SSLv3",
-                     },
                      auth: {
                         user: process.env.MAILER_USER,
                         pass: process.env.MAILER_PASSWORD,
